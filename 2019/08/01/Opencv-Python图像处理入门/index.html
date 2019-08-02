@@ -88,7 +88,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/08/01/Opencv-Python图像处理入门/Opencv-Python%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8%5C1.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/01/Opencv-Python图像处理入门/Opencv-Python%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8%5Ccat.jpg">
-<meta property="og:updated_time" content="2019-08-01T16:05:47.824Z">
+<meta property="og:updated_time" content="2019-08-01T16:09:40.723Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&#39;Opencv+Python图像处理入门&#39;">
 <meta name="twitter:description" content="因为比赛的需要，要求识别颜色、形状，所以趁有空把Opencv+Python学起来。">
@@ -332,9 +332,7 @@
       
 
       
-        <p><img src="Opencv-Python%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8%5C1.png" alt></p>
-
-
+        <p><img src="/2019/08/01/Opencv-Python图像处理入门/Opencv-Python%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8%5C1.png" alt></p>
 <p>因为比赛的需要，要求识别颜色、形状，所以趁有空把Opencv+Python学起来。</p>
 <a id="more"></a>
 
@@ -352,7 +350,7 @@
 <li>cv2.waitKey(delay)等待键盘输入，delay默认为0</li>
 <li>cv2.destroyAllWindows()删除窗口</li>
 </ol>
-<p>图片：<img src="Opencv-Python%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8%5Ccat.jpg" alt></p>
+<p>图片：<img src="/2019/08/01/Opencv-Python图像处理入门/Opencv-Python%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8%5Ccat.jpg" alt></p>
 <p>代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="comment">#读取彩色</span></span><br><span class="line">img_color = cv2.imread(<span class="string">'cat.jpg'</span>, cv2.IMREAD_COLOR)</span><br><span class="line"><span class="comment">#读取灰度</span></span><br><span class="line">img_gray = cv2.imread(<span class="string">'cat.jpg'</span>, cv2.IMREAD_GRAYSCALE)</span><br><span class="line"><span class="comment">#显示彩色图</span></span><br><span class="line">cv2.imshow(<span class="string">'img_color'</span>, img_color)</span><br><span class="line"><span class="comment">#显示灰度图</span></span><br><span class="line">cv2.imshow(<span class="string">'img_gray'</span>, img_gray)</span><br><span class="line"><span class="comment">#保存图像</span></span><br><span class="line">cv2.imwrite(<span class="string">'cat_gray.png'</span>, img_gray)</span><br><span class="line"><span class="comment">#等待键盘输入</span></span><br><span class="line">cv2.waitKey()</span><br><span class="line"><span class="comment">#删除窗口</span></span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
 
