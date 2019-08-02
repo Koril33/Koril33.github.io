@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Jing hui的小站">
 <meta property="og:description" content="主页面导航栏一般默认有“首页”，“关于”，“标签”，“分类”，“归档”等，那么我想添加一个自己的页面(不经过hexo渲染)，怎么办呢？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-02T02:34:16.704Z">
+<meta property="og:updated_time" content="2019-08-02T03:32:17.348Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo加入自己的页面(不经过hexo渲染)">
 <meta name="twitter:description" content="主页面导航栏一般默认有“首页”，“关于”，“标签”，“分类”，“归档”等，那么我想添加一个自己的页面(不经过hexo渲染)，怎么办呢？">
@@ -354,14 +354,16 @@
 
 <p>比如在这里，我想把别踩白块的网页放到game中</p>
 <p>操作：</p>
-<ol>
-<li><p>source文件夹下添加game文件夹，将game.html,css,js等文件放到里面。</p>
+<ol start="0">
+<li><p>执行命令<code>hexo new page game</code></p>
+</li>
+<li><p>source文件夹下会出现game文件夹，将game.html,css,js等文件放到里面。</p>
 </li>
 <li><p>在blog文件夹下的配置文件config.yml中找到skip_render选项，在后面添加<code>game/*</code>，<strong>注意</strong>：冒号后面有个空格哦~</p>
 </li>
 <li><p>在next的配置文件下找到menu选项，添加<code>game: /game/game.html</code>,(这一步要不要做我不太清楚，有空试一试)。</p>
 </li>
-<li><p>在你的game.html的开头添加如下代码：</p>
+<li><p>在你的game.html的开头添加如下代码（这一步应该不需要，吧？）：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>最后<code>hexo clean</code>&amp;<code>hexo g -d</code>完成部署</p>
