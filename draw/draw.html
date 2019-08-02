@@ -1,518 +1,620 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<title>电子白板</title>
-	<style type="text/css">
-		html,
-		body {
-			margin: 0;
-			padding: 0;
-		}
-
-		body {
-			width: 100%;
-			height: 100%;
-		}
-
-
-	.allVideoBox{
-    overflow: hidden;
-    /* padding-bottom: 0px; */
-}
-.allVideos{
-    /* float: right; */
-    /* position: relative; */
-    overflow-y: auto
-    
-}
-.drawAllvideos div.videoBig{
-    width: 220px;
-    height: 162px;
-    display: block;
-    float: none;
-    margin: 5px 0px;
-
-}
-/* div.videoBig{
-    width: 220px;
-height: 162px;
-display: block;
-float: none;
-margin: 5px 0px;
-} */
-
-/* css('width','220px'). css('height','162px').css('display','block').css('float','none').css('margin','5px 0px')*/
-/* css('padding-bottom',' 0px') */
-
-
-textarea {
-font-family: monospace;
-border-color: rgb(169, 169, 169);
-}
-
-textarea {
--webkit-appearance: textarea;
-background-color: white;
--webkit-rtl-ordering: logical;
-flex-direction: column;
-resize: auto;
-cursor: text;
-white-space: pre-wrap;
-word-wrap: break-word;
-border-width: 1px;
-border-style: solid;
-border-color: initial;
-border-image: initial;
-padding: 2px;
-}
-
-input,
-textarea,
-select,
-button {
-text-rendering: auto;
-color: initial;
-letter-spacing: normal;
-word-spacing: normal;
-text-transform: none;
-text-indent: 0px;
-text-shadow: none;
-display: inline-block;
-text-align: start;
-margin: 0em;
-font: 400 13.3333px Arial;
-}
-
-input,
-textarea,
-select,
-button,
-meter,
-progress {
--webkit-writing-mode: horizontal-tb;
-}
-
-#bj {
-background: #fff;
-/*背景图*/
-}
-
-
-#kuang {
-width: 8%;
-height: 100%;
-background: rgba(243,248,250,1);
-/* padding-top: 20px; */
-min-width: 80px;
-float: left;
-position: relative;
-} 
-
-.note-box {
-position: absolute;
-z-index: 9;
-width: auto;
-height: auto;
-}
-
-.note-box textarea {
-resize: none;
-background: transparent;
-border: none;
-color: #000;
-font-size: 2rem;
-font-weight: 700;
-font-family: "微软雅黑";
-}
-
-.toolbar-active,
-.toolbar-active:hover {
-opacity: 1 !important;
-}
-
-.k1 {
-width: 32px;
-height: 32px;
-cursor: pointer;
-transition: .2s linear;
-display: block;
-opacity: .25;
-position: relative;
-margin: 20px auto;
-}
-
-.k1:hover {
-opacity: 1;
-}
-
-.k1:hover .tooltip-inner-wrapper {
-display: block;
-}
-
-.button {
-border: none;
-color: white;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-cursor: pointer;
--webkit-transition-duration: 0.4s;
-transition-duration: 0.4s;
-position: absolute;
-top: 4px;
-left: 4px;
-width: 26px;
-height: 25px;
-padding: 0;
-margin: 0 auto;
-}
-
-
-
-.color {
-
-margin: 20px auto;
-width: 28px;
-height: 28px;
-
-border: 1px solid rgba(34, 34, 34, 0.28);
-border-radius: 50%;
-cursor: pointer;
-transition: .2s linear;
-display: block;
-position: relative;
-}
-
-#color {
-position: absolute;
-display: block;
-width: 18px;
-height: 18px;
-background-color: transparent;
-border-radius: 50%;
-top: 4px;
-left: 4px;
-}
-
-input[type="color"]:focus {
-outline: 0;
-}
-
-input[type="color"]::-webkit-color-swatch-wrapper {
-padding: 0;
-border-radius: 50%;
-}
-
-input[type="color"]::-webkit-color-swatch {
-border: 0;
-border-radius: 50%;
-}
-
-#note {
-background: #222;
--webkit-mask-size: 24px;
--webkit-mask: url(image/font.svg) no-repeat 0 0;
-display: block;
-}
-
-#xpc {
-background: #222;
--webkit-mask-size: 24px;
--webkit-mask: url(image/eraser.svg) no-repeat 0 0;
-display: block;
-}
-
-#chexiao {
-background: #222;
--webkit-mask-size: 24px;
--webkit-mask: url(image/undo.svg) no-repeat 0 0;
-display: block;
-}
-
-#qingping {
-background: #222;
--webkit-mask-size: 24px;
--webkit-mask: url(image/del.svg) no-repeat 0 0;
-display: block;
-}
-
-#xiazai {
-background: #222;
--webkit-mask-size: 24px;
--webkit-mask: url(image/save.svg) no-repeat 0 0;
-display: block;
-}
-
-.tooltip-inner-wrapper {
-display: none;
-width: 400px;
-position: absolute;
-left: -200px;
-margin-left: 50%;
-bottom: 100%;
-margin-bottom: 8px;
-text-align: center;
-z-index: 10000;
-}
-
-.tooltip-inner-wrapper:after {
-content: '';
-position: absolute;
-border-top: 5px solid #222;
-border-left: 4px solid transparent;
-border-right: 4px solid transparent;
-bottom: -5px;
-left: 50%;
-margin-left: -5px;
-}
-
-.tooltip {
-background-color: #222;
-color: #fff;
-white-space: nowrap;
-padding: 6px 8px;
-display: inline-block;
-line-height: 16px;
-min-height: 16px;
-min-height: 16px;
-vertical-align: bottom;
-max-width: 100%;
-overflow: hidden;
-text-overflow: ellipsis;
-font-size: 12px;
-}
-.ftSize div.fontItem {
-width: 18px;
-height: 18px;
-background: rgba(34, 34, 34, .1);
-float: left;
-border-radius: 50%;
-position: relative;
-margin-right: 10px;
-cursor: pointer;
-}
-.k1 .button{
-width: 28px;
-height: 28px;
-display: block;
-}
-
-#Line {
-/* background: #222; */
-background: #222;
--webkit-mask-size: 24px;
--webkit-mask: url(image/huabi.svg) no-repeat 0 0;
-display: block;
-/* background: url(../images/huab.png) no-repeat 0 0; */
-
-}
-.upload {
-width: 28px;
-height: 28px;
-display: block;
-margin: 0px auto;
-
-background: url(image/pg.png) no-repeat;
-
-}
-
-.upload_pic {
-display: block;
-width: 100%;
-height: 22px;
-position: absolute;
-left: 0;
-top: 0;
-opacity: 0;
-border-radius: 5px;
-}
-#draw {
-background: #fff;
-float: left;
-width: calc(100% - 224px);
-position: relative;
-}
-.drawFb{
-
-font-size:20px;
-font-family:MicrosoftYaHei;
-font-weight:400;
-color:rgba(0,160,233,1);
-margin-bottom: 30px;
-text-align: center
-}
-
-#textInput {
-position: absolute;
-top: 31px;
-left: -110px;
-width: 321px;
-margin: auto;
-height: 42px;
-background-color: #fff;
-padding: 4px;
-box-shadow: 0 0 1px 1px #ccc;
-border-radius: 3px;
-}
- #textInput>button {
-border: 1px solid #ccc;
-}
-#textInput .btn{
-display: inline-block;
-padding: 6px 12px;
-margin-bottom: 0;
-font-size: 14px;
-font-weight: 400;
-line-height: 1.42857143;
-text-align: center;
-white-space: nowrap;
-vertical-align: middle;
-touch-action: manipulation;
-cursor: pointer;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-border: 1px solid transparent;
-border-radius: 4px;
-color: #333;
-background-color: #fff;
-border-color: #ccc;
-}
-#textInput input{
-text-rendering: auto;
-color: initial;
-letter-spacing: normal;
-word-spacing: normal;
-text-transform: none;
-text-indent: 0px;
-text-shadow: none;
-display: inline-block;
-text-align: start;
-margin: 0em;
-font: 400 13.3333px Arial;
-
-}
-#ftSize{
-position: absolute;
-
-left: 70px;
-top: 140px;
-border: 1px solid rgba(34, 34, 34, .1);
-/* width: 46px; */
-padding: 10px;
-border-radius: 23px;
-background: #fff;
-}
-.fontItem{
-text-align: center;
-width: 24px;
-height: 24px;
-background: rgba(34, 34, 34, .1);
-float: left;
-border-radius: 50%;
-position: relative;
-margin-right: 10px;
-cursor: pointer;
-margin: 10px 0px;
-line-height: 25px;
-}
-
-	</style>
+    <meta charset="UTF-8">
+    <title>画板</title>
+    <style>
+        body,html{ width: 100%; height: 100%; background-repeat: no-repeat; background-position: 0 0 no-repeat; background-size: cover; overflow: hidden; font-family: "Microsoft yahei"; background-color: #fff; }
+		li{ list-style-type: none; }
+		ul{ padding-left: 10px }
+        h1{
+            position:fixed;
+            left:15px;
+            top:5px;
+            width:250px;
+            height:60px;
+            color: #ff5e83;
+            font-size:26px;
+            line-height:60px;
+            text-align:center;
+            background-color:;
+        }
+        canvas{ position: fixed; left: 280px; top: 5px; display: block; cursor: pointer; background-color: #FFFFFF; border: 1px solid #CCCCCC; }
+        .container{
+            width:250px;
+            height:60px;
+            position:fixed;
+            left:15px;
+            top:70px;
+        }
+        .container h2{
+            width:100%;
+            height:60px;
+            font-size:22px;
+            text-align:center;
+            color: #ff377e;
+            font-weight:normal;
+            line-height:60px;
+            border-bottom:1px solid #000;
+        }
+        .container h3{
+            width:100%;
+            height:30px;
+            font-size:18px;
+            text-align:center;
+            color: #41b1ff;
+            font-weight:normal;
+            line-height:30px;
+        }
+        .row{ width: 100%; height: auto; background-color: rgba(192,192,192,0.50); overflow: hidden;        }
+        .type{
+            width:100%;
+            height:auto;
+            margin:20px 0;
+            padding-bottom:10px;
+            border-bottom:1px solid #fff;
+        }
+        .type:after{
+            content:"";
+            display:block;
+            clear:both;
+        }
+        .type li{
+            float:left;
+            width:90px;
+            height:45px;
+            margin:0 auto;
+            background-color:#0078ff;
+            color:#fff;
+            font-size:18px;
+            line-height:45px;
+            text-align:center;
+            margin-bottom:15px;
+            border-radius:5px;
+            cursor:pointer;
+            transition:all 0.7s;
+        }
+        .type li:hover{
+            background-color:#fff;
+            color:#0078ff;
+            box-shadow:0 0 10px rgba(0, 120, 255, 0.77);
+        }
+        .type .typeactive{
+            background-color:#fff;
+            color:#0078ff;
+            box-shadow:0 0 10px rgba(0, 120, 255, 0.77);
+        }
+        .type li:nth-child(odd){
+            margin-left:25px;
+        }
+        .type li:nth-child(even){
+            margin-left:20px;
+        }
+        .style{
+            width:100%;
+            height:40px;
+        }
+        .style li{
+            float:left;
+            width:90px;
+            height:45px;
+            background-color:#FFBC00;
+            color:#fff;
+            font-size:18px;
+            line-height:45px;
+            text-align:center;
+            border-radius:5px;
+            cursor:pointer;
+            transition:all 0.7s;
+        }
+        .style li:hover{
+            color: #ffa800;
+            background-color:#fff;
+            box-shadow:0 0 10px rgba(255, 232, 95, 0.77);
+        }
+        .style .styleactive{
+            color: #ffa800;
+            background-color:#fff;
+            box-shadow:0 0 10px rgba(255, 232, 95, 0.77);
+        }
+        .style li:nth-child(1){
+            margin-left:25px;
+        }
+        .style li:nth-child(2){
+            margin-left:20px;
+        }
+        .poly{
+            position:relative;
+        }
+        .bian{
+            position:absolute;
+            left:100px;top:0;
+            width:90px;
+            height:auto;
+            border-radius:5px;
+            background-color:#EC494E;
+            overflow:hidden;
+            overflow:hidden;
+            transform:scale(1.2);
+            display:none;
+        }
+        .bian span{
+            display:block;
+            float:left;
+            width:40px;
+            height:45px;
+            font-size:16px;
+            color:#fff;
+            text-align:center;
+            line-height:40px;
+            color:#fff;
+            transition:all 0.7s;
+        }
+        .bian input{
+            float:left;
+            width:45px;
+            height:35px;
+            margin-top:5px;
+            border:1px solid #fff;
+            box-sizing:border-box;
+            text-align:center;
+            line-height:40px;
+            font-size:18px;
+            color:#fff;
+            background:#EC494E;
+            border-radius:3px;
+            box-shadow:0 0 0 4px #fff inset;
+            transition:all 0.7s;
+        }
+        .cut,.create,.back{
+            float:left;
+            width:90px;
+            height:45px;
+            margin-left:25px;
+            margin-bottom:15px;
+            background-color: #5bd219;
+            color:#fff;
+            font-size:18px;
+            line-height:45px;
+            text-align:center;
+            border-radius:5px;
+            cursor:pointer;
+        }
+        .copy,.clear,.save{
+            float:left;
+            width:90px;
+            height:45px;
+            margin-left:20px;
+            margin-bottom:15px;
+            background-color: #5bd219;
+            color:#fff;
+            font-size:18px;
+            line-height:45px;
+            text-align:center;
+            border-radius:5px;
+            cursor:pointer;
+        }
+        .shezhi{
+            transition:all 0.7s;
+        }
+        .shezhistyle{
+            background:#fff;
+            color:#5bd219;
+        }
+        .create{
+            position:relative;
+        }
+        .xinjian{
+            position:absolute;
+            left:0;top:0;
+            width:200px;
+            height:165px;
+            border-radius:5px;
+            background-color:#EC494E;
+            box-shadow:0 0 15px rgba(236, 73, 78, 0.76);
+            cursor:default;
+            display:none;
+        }
+        .xinjian:hover{
+            color:#fff;
+        }
+        .xinjian_before{
+            position:absolute;
+            right:0;
+            top:0;
+            width:20px;
+            height:20px;
+            color:#fff;
+            line-height:16px;
+            text-indent:-1px;
+            font-size:30px;
+            border:1px solid #fff;
+            transform:rotate(45deg);
+            border-radius:50%;
+            cursor:pointer;
+        }
+        .xinjian h6{
+            width:100%;
+            height:50px;
+            color:#fff;
+            line-height:50px;
+            text-align:center;
+            font-size:20px;
+            font-weight:normal;
+        }
+        #ding{
+            width:60px;
+            height:30px;
+            font-size:14px;
+            border-radius:3px;
+            color:#fff;
+            background-color:#0078ff;
+            border:0;
+            outline:none;
+            cursor:pointer;
+            box-shadow:0 0 10px rgba(0, 120, 255, 0.5);
+        }
+        .xinjian_width,.xinjian_height{
+            float:left;
+            width:85px;
+            height:40px;
+            margin-left:10px;
+            border-radius:5px;
+            margin-bottom:20px;
+            background-color:#FFBC00;
+        }
+        .xinjian_width:hover,.xinjian_height:hover{
+            background-color:#fff;
+            color:#000;
+        }
+        .xinjian_width span,.xinjian_height span{
+            float:left;
+            width:30px;
+            height:100%;
+            font-size:16px;
+            text-align:center;
+            line-height:40px;
+        }
+        .xinjian_width input,.xinjian_height input{
+            float:left;
+            margin-top:5px;
+            width:50px;
+            height:30px;
+            text-align:center;
+            line-height:30px;
+            font-size:14px;
+            border:1px solid #FFBC00;
+            box-sizing:border-box;
+        }
+        .box{
+            float:left;
+            width:90px;
+            height:auto;
+            background-color:#EC494E;
+            overflow:hidden;
+            border-radius:5px;
+            transition:all 0.7s;
+        }
+        .box{
+            margin-left:25px;
+        }
+        .linewidth{
+            margin-left:20px;
+        }
+        .box:hover{
+            background-color:#fff;
+        }
+        .box span{
+            display:block;
+            float:left;
+            width:40px;
+            height:45px;
+            font-size:16px;
+            color:#fff;
+            text-align:center;
+            line-height:40px;
+            color:#fff;
+            transition:all 0.3s;
+        }
+        .box input{
+            float:left;
+            width:45px;
+            height:35px;
+            margin-top:5px;
+            border:1px solid #fff;
+            box-sizing:border-box;
+            text-align:center;
+            line-height:40px;
+            font-size:18px;
+            color:#fff;
+            background:#EC494E;
+            border-radius:3px;
+            box-shadow:0 0 0 4px #fff inset;
+            transition:all 0.3s;
+        }
+        .box2 span{
+            width:55px;
+        }
+        .box2 input{
+            width:140px;
+        }
+        .space{
+            float:left;
+            width:100%;
+            height:0;
+            border-bottom:1px solid #fff;
+            margin:20px 0;
+        }
+    </style>
 </head>
-
-<body id="bj">
-	<div style="" id="draw">
-		<div id="kuang">
-			<div class="drawFb"> 画板 </div>
-			<div class="upload k1">
-				<input type="file" class="upload_pic" id="upload" />
-			</div>
-			<div class="k1" class="line toolbar-active">
-				<input type="button" value="" id="Line" class="button button2">
-				<span class="tooltip-inner-wrapper">
-					<span class="tooltip">
-						画笔
-					</span>
-				</span>
-			</div>
-			<!-- 文字 -->
-			<div class="k1">
-				<input type="button" value="" id="note" class="button button2">
-				<span class="tooltip-inner-wrapper">
-					<span class="tooltip">
-						编辑
-					</span>
-				</span>
-			</div>
-			<!-- 橡皮擦 -->
-			<div class="k1">
-				<input type="button" value="" id="xpc" class="button button2">
-				<span class="tooltip-inner-wrapper">
-					<span class="tooltip">
-						橡皮擦
-					</span>
-				</span>
-			</div>
-			<!-- 删除 -->
-			<div class="k1">
-				<input type="button" value="" id="qingping" class="button button2">
-				<span class="tooltip-inner-wrapper">
-					<span class="tooltip">
-						清屏
-					</span>
-				</span>
-			</div>
-			<!-- 撤销 -->
-			<div class="k1">
-				<input type="button" value="" id="chexiao" class="button button2">
-				<span class="tooltip-inner-wrapper">
-					<span class="tooltip">
-						撤销
-					</span>
-				</span>
-			</div>
-			<div class="color">
-				<input type="color" id="color" class="button button2">
-			</div>
-			<!-- 保存 -->
-			<div class="k1">
-				<input type="button" value="" id="xiazai" class="button button2">
-				<span class="tooltip-inner-wrapper">
-					<span class="tooltip">
-						保存
-					</span>
-				</span>
-			</div>
-
-			<div class="k1" style="display: none;">
-				<input class="button button2" type="range" id="cuxi" value="20" min="0" max="20">
-			</div>
-
-
-
-
-
-
-		</div>
-		<svg id="svg" height="100%" width="92%"></svg>
-
-		<div id="textInput" class="btn-group" txtX='702' txtY='309' style="display: none; left: 702px; top: 309px;">
-				<input type="text" maxlength="100" class="btn btn-default">
-				<button tabindex="-1" onclick="submit(this)" class="btn btn-default ng-binding">提交</button>
-				<button tabindex="-1" onclick="cancel(this)" class="btn btn-default ng-binding">取消</button>
-			</div>
-	</div>
-
-	<script src="./js/jquery.js"></script>
-	<!-- <script src="../layer/layer.js"></script> -->
-	<!-- <script src="./js/rgbcolor.min.js"></script>
-	<script src="./js/stackblur.min.js"></script> -->
-	<script src="./js/saveSvgAsPng.js"></script>
-	
-	<script type="text/javascript" src="./js/svgDraw.js"></script>
+<body>
+    <h1>画板</h1>
+    <div class="container">
+        <div class="row">
+            <ul name="" class="type">
+                <li class="line typeactive" data="line">直&nbsp;&nbsp;&nbsp;线</li>
+                <li class="rect" data="rect">矩&nbsp;&nbsp;&nbsp;形</li>
+                <li class="circle" data="circle">圆&nbsp;&nbsp;&nbsp;圈</li>
+                <li class="pen" data="pen">铅&nbsp;&nbsp;&nbsp;笔</li>
+                <li class="poly" data="poly">多&nbsp;边&nbsp;形
+                    <div class="bian"><span>边数</span><input type="number" name="number" min="3" value="3" max="15"></div></li>
+                <li class="eraser" data="eraser">橡&nbsp;&nbsp;&nbsp;皮</li>
+            </ul>
+            <ul class="style">
+                <li class="stroke styleactive">描&nbsp;&nbsp;&nbsp;边</li>
+                <li class="fill">填&nbsp;&nbsp;&nbsp;充</li>
+            </ul>
+            <div class="space"></div>
+            <div class="box"><span>颜色</span></label><input type="color" name="color" value="#000000"></div>
+            <div class="box linewidth"><span>线宽</span><input type="number" name="number" value="1" max="150" min="1"></div>
+            <div class="space"></div>
+            <div class="create shezhi">新&nbsp;&nbsp;&nbsp;建
+                <div class="xinjian">
+                    <h6>画 板 尺 寸</h6>
+                    <div class="xinjian_width">
+                        <span>宽</span>
+                        <input type="number" max="1070" min="500" value="500">
+                    </div>
+                    <div class="xinjian_height">
+                        <span>高</span>
+                        <input type="number" max="648" min="300" value="300">
+                    </div>
+                    <input type="button" name="queding" value="确定" id="ding">
+                    <div class="xinjian_before">+</div>
+                </div>
+            </div>
+            <div class="clear shezhi">清&nbsp;&nbsp;&nbsp;空</div>
+            <div class="back shezhi">撤&nbsp;&nbsp;&nbsp;销</div>
+            <div class="save shezhi">保&nbsp;&nbsp;&nbsp;存</div>
+            <div class="cut shezhi" data="cut">剪&nbsp;&nbsp;&nbsp;切</div>
+            <div class="copy shezhi">复&nbsp;&nbsp;&nbsp;制</div>
+        </div>
+    </div>
+    <canvas width="1070" height="648"></canvas>
 </body>
+<script src="index.js"></script>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script>
+    var container=$(".container");
+    var canvas=document.querySelector("canvas");
+    var screenWidth=document.documentElement.clientWidth;
+    var screenHeight=document.documentElement.clientHeight;
+    var width=screenWidth-295;
+    var height=screenHeight-15;
+    canvas.width=width;
+    canvas.height=height;
+    var obj=canvas.getContext("2d");
+    var typechoose=$(".type li");
+    var stylechoose=$(".style li");
+    var colorchoose=document.querySelector("input[type=color]");
+    var widthchoose=document.querySelector(".linewidth input[type=number]");
+    var canvasWidth=document.querySelector(".xinjian_width input[type=number]");
+    var canvasHeight=document.querySelector(".xinjian_height input[type=number]");
+    canvasWidth.value=width;canvasHeight.value=height;
+    canvasWidth.max=screenWidth-295;canvasHeight.max=screenHeight-15;
+    var ding=document.querySelector("#ding");
+    var poly=$(".poly");
+    var bian=$(".bian");
+    var polychoose=$(".bian input");
+    var shezhi=$(".shezhi");
+    var cut=$(".cut");
+    var copy=$(".copy");
+    var back=$(".back");
+    var clear=$(".clear");
+    var save=$(".save");
+    var create=$(".create");
+    var xinjian=$(".xinjian");
+    var create_close=$(".xinjian_before");
+    var cutflag=false;
+    var iscut=true;
+    var color="#000";
+    var type="line";
+    var n=3;
+    var linewidth="1";
+    var style="stroke";
+    var arr=[];
+    $(".fill").css({display:"none"});
+    // 多边形
+    poly.hover(function(){
+        bian.fadeIn();
+    },function(){
+        bian.fadeOut();
+    })
+    // 绘制形状
+    typechoose.each(function(index,ele){
+        $(ele).click(function(){
+            typechoose.removeClass("typeactive");
+            $(this).toggleClass("typeactive");
+            cut.css({color:"#fff",backgroundColor:"#5bd219",opacity:1});
+            copy.css({color:"#fff",backgroundColor:"#5bd219",opacity:1});
+            type=$(this).attr("data");
+            if($(this).is(".line")||$(this).is(".pen")){
+                style="stroke";
+                $(".stroke").addClass("styleactive");
+                $(".fill").css({display:"none"}).removeClass("styleactive");
+            }else{
+                $(".fill").css({display:"block"});
+            }
+        })
+    })
+    // 描边、填充单击事件
+    stylechoose.each(function(index,ele){
+        $(ele).click(function(){
+            style=$(this).attr("class");
+            stylechoose.removeClass("styleactive");
+            $(this).toggleClass("styleactive");
+        })
+    })
+    // 剪切
+    cut.click(function(){
+        type=$(this).attr("data");
+        typechoose.removeClass("typeactive");
+        $(this).css({color:"#5bd219",backgroundColor:"#fff"}).toggleClass("shezhistyle");
+        iscut=true;
+    })
+    copy.click(function(){
+        type="cut";
+        typechoose.removeClass("typeactive");
+        $(this).css({color:"#5bd219",backgroundColor:"#fff"}).toggleClass("shezhistyle");
+        iscut=false;
+    })
+    // 设置
+    shezhi.each(function(index,ele){
+        if($(ele).is(".cut")||$(ele).is(".copy")){
+            return;
+        }else{
+            $(ele).click(function(){
+                $(this).css({color:"#5bd219",backgroundColor:"#fff"}).animate({opacity:0.99},200,function(){
+                    $(this).css({color:"#fff",backgroundColor:"#5bd219",opacity:1});
+                });
+            })
+        }
+    })
+    // 撤销
+    back.click(function(){
+        arr.pop();
+        obj.clearRect(0,0,width,height);
+        if(arr.length>0){
+            obj.putImageData(arr[arr.length-1],0,0,0,0,width,height);
+        }
+    })
+    // 清除
+    clear.click(function(){
+        arr=[];
+        obj.clearRect(0,0,width,height);
+    })
+    // 保存
+    save.click(function(){
+        var reg=canvas.toDataURL("image/png");//跳转页面手动保存
+//        var reg=canvas.toDataURL("image/png").replace("image/png","image/octet-stream");//直接自动保存下载
+        location.href=reg;
+    })
+    // 新建画布
+    create.click(function(){
+        xinjian.fadeIn();
+    })
+    create_close.click(function(e){
+        e.stopPropagation()
+        xinjian.fadeOut();
+    })
+    canvasWidth.onblur=function(){
+        if(this.value<=this.min){
+            this.value=this.min;
+        }
+        if(this.value>=screenWidth-295){
+            this.value=screenWidth-295;
+        }
+        width=this.value;
+    }
+    canvasHeight.onblur=function(){
+        if(this.value<=this.min){
+            this.value=this.min;
+        }
+        if(this.value>=screenHeight-15){
+            this.value=screenHeight-15;
+        }
+        height=this.value;
+    }
+    ding.onclick=function(e){
+        canvas.width=width;
+        canvas.height=height;
+        canvas.style.left=(screenWidth+295-canvas.width)/2+"px";
+        canvas.style.top=(screenHeight-5-canvas.height)/2+"px";
+        arr=[];
+        obj.clearRect(0,0,width,height);
+        e.stopPropagation()
+        xinjian.fadeOut();
+    }
+    // 颜色选择
+    colorchoose.onchange=function(){
+        color=this.value;
+    }
+    // 粗细改变
+    widthchoose.onchange=function(){
+        linewidth=this.value;
+    }
+    //多边形边数
+    polychoose.change(function(){
+        n=this.value;
+    })
+    var x,y,w,h;
+    var lx,ly,lw,lh;
+    var cutdata;
+    canvas.onmousedown=function(e){
+        x=e.offsetX;
+        y=e.offsetY;
+        if(type=="pen"){
+            obj.beginPath();
+            obj.moveTo(x,y);
+        }
+        if(type=="eraser"){
+            obj.clearRect(x-5,y-5,10,10);
+        }
+        if(cutflag&&type=="cut"){
+            if(arr.length!=0){
+                arr.splice(-1,1);
+            }
+        }
+        var draw=new Draw(obj,{type:style,color:color,width:linewidth});//实例化构造函数
+        canvas.onmousemove=function(e){
+            w=e.offsetX;
+            h=e.offsetY;
+            if(type!="eraser"){
+                obj.clearRect(0,0,width,height);
+                if(arr.length!=0){
+                    obj.putImageData(arr[arr.length-1],0,0,0,0,width,height);
+                }
+            }
+            if(cutflag&&type=="cut"){
+                if(iscut){
+                    obj.clearRect(lx,ly,lw-lx,lh-ly);
+                }
+                var nx=lx+(w-x);
+                var ny=ly+(h-y);
+                obj.putImageData(cutdata,nx,ny);
+            }else if(type=="poly"){
+                draw[type](x,y,w,h,n);
+            }else{
+                draw[type](x,y,w,h);
+            }
 
+        }
+        document.onmouseup=function(){
+            canvas.onmousemove=null;
+            document.onmouseup=null;
+            if(type=="cut"){
+                if(!cutflag){
+                    cutflag=true;
+                    cutdata=obj.getImageData(x+1,y+1,w-x-2,h-y-2);
+                    lx=x;ly=y;lw=w;lh=h;
+                    container.css({display:"none"});
+                }else{
+                    cutflag=false;
+                    container.css({display:"block"});
+                }
+            }
+            arr.push(obj.getImageData(0,0,width,height));
+        }
+    }
+</script>
 </html>
