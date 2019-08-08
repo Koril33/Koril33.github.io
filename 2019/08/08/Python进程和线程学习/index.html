@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="正则表达式（Regular Expression，简写为RE），使用某些规则去匹配需要的字符串。">
+<meta name="description" content="CPU+RAM+各种东西（显卡，硬盘，键盘鼠标）构成计算机，但计算机的运行基本上和CPU，寄存器，RAM挂钩。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式（一）">
-<meta property="og:url" content="http://yoursite.com/2019/08/04/正则表达式（一）/index.html">
+<meta property="og:title" content="Python进程和线程学习">
+<meta property="og:url" content="http://yoursite.com/2019/08/08/Python进程和线程学习/index.html">
 <meta property="og:site_name" content="Jing hui的小站">
-<meta property="og:description" content="正则表达式（Regular Expression，简写为RE），使用某些规则去匹配需要的字符串。">
+<meta property="og:description" content="CPU+RAM+各种东西（显卡，硬盘，键盘鼠标）构成计算机，但计算机的运行基本上和CPU，寄存器，RAM挂钩。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-05T08:52:55.847Z">
+<meta property="og:updated_time" content="2019-08-08T02:49:04.347Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="正则表达式（一）">
-<meta name="twitter:description" content="正则表达式（Regular Expression，简写为RE），使用某些规则去匹配需要的字符串。">
+<meta name="twitter:title" content="Python进程和线程学习">
+<meta name="twitter:description" content="CPU+RAM+各种东西（显卡，硬盘，键盘鼠标）构成计算机，但计算机的运行基本上和CPU，寄存器，RAM挂钩。">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/04/正则表达式（一）/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/08/Python进程和线程学习/">
 
 
 
 
 
-  <title>正则表达式（一） | Jing hui的小站</title>
+  <title>Python进程和线程学习 | Jing hui的小站</title>
   
 
 
@@ -282,7 +282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/04/正则表达式（一）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/08/Python进程和线程学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ding Jinghui">
@@ -299,7 +299,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">正则表达式（一）</h1>
+          <h1 class="post-title" itemprop="name headline">Python进程和线程学习</h1>
         
 
         <div class="post-meta">
@@ -311,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-04T14:17:29+08:00">
-                2019-08-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-08T09:02:31+08:00">
+                2019-08-08
               </time>
             
 
@@ -349,31 +349,31 @@
       
 
       
-        <p>正则表达式（Regular Expression，简写为RE），使用某些规则去匹配需要的字符串。</p>
+        <p>CPU+RAM+各种东西（显卡，硬盘，键盘鼠标）构成计算机，但计算机的运行基本上和CPU，寄存器，RAM挂钩。</p>
 <a id="more"></a>
 
-<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><p>\ ：转义字符，使后一个字符改变原来的意思。</p>
-<p>\d ：数字1-9。</p>
-<p>\D ：非数字。</p>
-<p>\w ：单词字符。</p>
-<p>\W ：非单词字符。</p>
-<p>\s ：任意的空白字符</p>
-<p>. ：匹配任意除换行符“\n”外的字符。</p>
-<p>在正则表达式中，如果给出字符，则直接进行精确匹配。否则，就按规则进行匹配。</p>
-<p><strong>例如</strong>：</p>
-<ul>
-<li>‘123\d’可以匹配‘1234’也可以是‘1239’</li>
-<li>‘\d\d\d’可以匹配‘111’或者‘123’等等，三个数字就行</li>
-<li>‘\w\w\d’可以匹配‘ab1’或者‘cd2’之类的两个字符加一个数字</li>
-</ul>
-<p>要匹配长的字符，可以用“*”，它表示包括0的任意的字符，用“+”表示至少一个字符，用“？”表示0个或1个字符，用{n}表示n个字符，{n,m}表示n-m个字符。</p>
+<p>CPU的处理速度相当快，对于单核CPU而言，多任务处理，基本上是让系统轮流交替执行各任务，比如有A，B，C，D四个任务，怎么让他们同时执行呢？</p>
+<p>CPU处理也是一步一步来的，任务A执行0.01s，任务B执行0.01s，任务C执行0.01s，最后任务D执行0.01s…如此循环往复，由于CPU的速度太快了，看上去就像是同时执行一样。</p>
+<h3 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h3><p>对于操作系统而言，一个任务就是一个进程（Process），打开QQ，开了一个进程，打开LOL，又开了一个进程。</p>
+<p>大部分进程不止干一件事情，比如QQ，可以打字，同时还可以视频，所以一个进程要运行多个子任务，这每个子任务就称为线程（Thread）。</p>
 <hr>
-<h3 id="Python的正则表达式"><a href="#Python的正则表达式" class="headerlink" title="Python的正则表达式"></a>Python的正则表达式</h3><p>在Python中使用正则表达式，首先要引入标准库“re”</p>
+<h3 id="多个任务的实现有3种方式"><a href="#多个任务的实现有3种方式" class="headerlink" title="多个任务的实现有3种方式"></a>多个任务的实现有3种方式</h3><ul>
+<li>多进程，启动多个进程，每个进程只有一个线程</li>
+<li>多线程，启动一个进程，但在一个进程内启动多个线程</li>
+<li>多进程+多线程，启动多个进程，每个进程再启动多个线程</li>
+</ul>
+<p>Python既支持多进程，又支持多线程。</p>
+<hr>
+<h3 id="Unix-Linux下实现多进程"><a href="#Unix-Linux下实现多进程" class="headerlink" title="Unix/Linux下实现多进程"></a>Unix/Linux下实现多进程</h3><p>Unix/Linux操作系统提供了<code>fork()</code>系统调用，普通函数调用一次，返回一次，<code>fork()</code>调用一次，返回两次，子进程永远返回‘0’，父进程返回子进程的ID，这样，一个父进程可以fork出很多子进程，父进程需要记住每个子进程的ID，子进程调用<code>getppid()</code>就可以得到父进程的ID</p>
+<p>Python的os模块封装了常见的系统调用，其中fork就是其中之一。</p>
 <p>代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test = <span class="string">'This is a test, I think Python is the best language!'</span></span><br><span class="line">p = re.findall(<span class="string">r't\w+k'</span>, test)</span><br><span class="line">print(p)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Process (%s) start...'</span> % os.getpid())</span><br><span class="line"><span class="comment"># Only works on Unix/Linux/Mac</span></span><br><span class="line">pid = os.fork()</span><br><span class="line"><span class="keyword">if</span>(pid == <span class="number">0</span>):</span><br><span class="line">    print(<span class="string">'I am child process(%s) and my parent id (%s)'</span> % (os.getpid(), os.getppid()))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'I (%s) just created a child process(%s)'</span> % (os.gitpid(), pid))</span><br></pre></td></tr></table></figure>
 
-<p>上述例子，打印出结果“think”。</p>
-<p>在第三行代码中，<code>&#39;t\w+k&#39;</code>之所以要在这一句前加‘r’，是因为‘\’在python里也是转义字符，所以不加‘r’必须要写成<code>&#39;t\\w+k&#39;</code></p>
+<hr>
+<h3 id="Windows下实现多进程"><a href="#Windows下实现多进程" class="headerlink" title="Windows下实现多进程"></a>Windows下实现多进程</h3><p>由于Windows没有fork调用，所以必须借助multiprocessing模块，它提供了一个process类来代表一个进程对象。</p>
+<p>代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_proc</span><span class="params">(name)</span>:</span></span><br><span class="line">    print(<span class="string">'Run child process %s (%s)...'</span> % (name, os.getpid()))</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    print(<span class="string">'Parent process %s.'</span> % os.getpid())</span><br><span class="line">    p = Process(target = run_proc, args = (<span class="string">'test'</span>,))</span><br><span class="line">    print(<span class="string">'Child process will start.'</span>)</span><br><span class="line">    p.start()</span><br><span class="line">    p.join()</span><br><span class="line">    print(<span class="string">'Child process end.'</span>)</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -398,8 +398,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/02/Opencv摄像头操作/" rel="next" title="Opencv摄像头操作">
-                <i class="fa fa-chevron-left"></i> Opencv摄像头操作
+              <a href="/2019/08/04/正则表达式（一）/" rel="next" title="正则表达式（一）">
+                <i class="fa fa-chevron-left"></i> 正则表达式（一）
               </a>
             
           </div>
@@ -407,10 +407,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/08/Python进程和线程学习/" rel="prev" title="Python进程和线程学习">
-                Python进程和线程学习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -531,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本语法"><span class="nav-number">1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python的正则表达式"><span class="nav-number">2.</span> <span class="nav-text">Python的正则表达式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程和线程"><span class="nav-number">1.</span> <span class="nav-text">进程和线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个任务的实现有3种方式"><span class="nav-number">2.</span> <span class="nav-text">多个任务的实现有3种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unix-Linux下实现多进程"><span class="nav-number">3.</span> <span class="nav-text">Unix/Linux下实现多进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows下实现多进程"><span class="nav-number">4.</span> <span class="nav-text">Windows下实现多进程</span></a></li></ol></div>
             
 
           </div>
