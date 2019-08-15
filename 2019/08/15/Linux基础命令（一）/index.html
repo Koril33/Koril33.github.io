@@ -79,20 +79,17 @@
 
 
 
-<meta name="description" content="因为比赛的需要，要求识别颜色、形状，所以趁有空把Opencv+Python学起来。">
+<meta name="description" content="关于Linux命令，ls，cd，pwd，mkdir，rmdir，cp，mv，rm一些简单的参数和操作。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&#39;Opencv+Python图像处理入门&#39;">
-<meta property="og:url" content="http://yoursite.com/2019/08/01/Opencv-Python图像处理入门/index.html">
+<meta property="og:title" content="Linux基础命令（一）">
+<meta property="og:url" content="http://yoursite.com/2019/08/15/Linux基础命令（一）/index.html">
 <meta property="og:site_name" content="Jing hui的小站">
-<meta property="og:description" content="因为比赛的需要，要求识别颜色、形状，所以趁有空把Opencv+Python学起来。">
+<meta property="og:description" content="关于Linux命令，ls，cd，pwd，mkdir，rmdir，cp，mv，rm一些简单的参数和操作。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/08/01/Opencv-Python图像处理入门/Opencv-Python%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8%5C1.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/01/Opencv-Python图像处理入门/Opencv-Python%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8%5Ccat.jpg">
-<meta property="og:updated_time" content="2019-08-01T16:09:40.723Z">
+<meta property="og:updated_time" content="2019-08-15T07:35:21.304Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;Opencv+Python图像处理入门&#39;">
-<meta name="twitter:description" content="因为比赛的需要，要求识别颜色、形状，所以趁有空把Opencv+Python学起来。">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/01/Opencv-Python图像处理入门/Opencv-Python%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8%5C1.png">
+<meta name="twitter:title" content="Linux基础命令（一）">
+<meta name="twitter:description" content="关于Linux命令，ls，cd，pwd，mkdir，rmdir，cp，mv，rm一些简单的参数和操作。">
 
 
 
@@ -122,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/01/Opencv-Python图像处理入门/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/15/Linux基础命令（一）/">
 
 
 
 
 
-  <title>'Opencv+Python图像处理入门' | Jing hui的小站</title>
+  <title>Linux基础命令（一） | Jing hui的小站</title>
   
 
 
@@ -285,7 +282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/01/Opencv-Python图像处理入门/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/Linux基础命令（一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ding Jinghui">
@@ -302,7 +299,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">'Opencv+Python图像处理入门'</h1>
+          <h1 class="post-title" itemprop="name headline">Linux基础命令（一）</h1>
         
 
         <div class="post-meta">
@@ -314,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-01T22:32:33+08:00">
-                2019-08-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-15T12:21:03+08:00">
+                2019-08-15
               </time>
             
 
@@ -352,32 +349,118 @@
       
 
       
-        <p><img src="/2019/08/01/Opencv-Python图像处理入门/Opencv-Python%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8%5C1.png" alt></p>
-<p>因为比赛的需要，要求识别颜色、形状，所以趁有空把Opencv+Python学起来。</p>
+        <p>关于Linux命令，ls，cd，pwd，mkdir，rmdir，cp，mv，rm一些简单的参数和操作。</p>
 <a id="more"></a>
 
-<p>使用的库：numpy, opencv</p>
-<p>在同级文件下，放个图片cat.jpg作为测试图片。</p>
-<hr>
-<h3 id="读取图片、显示图片"><a href="#读取图片、显示图片" class="headerlink" title="读取图片、显示图片"></a>读取图片、显示图片</h3><ol>
-<li>cv2.imread(文件名，标记)：用来读取图片，标记可选参数如下：<ul>
-<li>cv2.IMREAD_COLOR：读取彩色模式</li>
-<li>cv2.IMREAD_GRAYSCALE：读取灰度模式</li>
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>Linux的ls命令用于显示目录内容。</p>
+<p>参数：</p>
+<ul>
+<li>-a 显示所有文件及目录，包括“.”（当前目录）和“..”（父目录）</li>
+<li>-A 同a，但不包括“.”和“..”</li>
+<li>-r 将文件以反次序显示（原定依字母次序排列）</li>
+<li>-l 列出详细信息，类型，权限，拥有者，大小等等</li>
+<li>-F 列出的文件后加符号，如执行文件加“*”，目录加“/”</li>
+<li>-R 若目录下有文件，则将之下的文件依次列出</li>
 </ul>
+<hr>
+<h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p>Linux的cd命令用于切换目录。</p>
+<p>参数：</p>
+<ul>
+<li>~ 进入home目录</li>
+<li>/ 进入根目录</li>
+<li>.. 进入父目录（一直使用“..”最后会进入根目录）</li>
+<li>-是返回刚才的目录</li>
+<li>../.. 跳到目录上两层</li>
+</ul>
+<hr>
+<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>Linux的pwd命令用于查看当前所在目录。</p>
+<hr>
+<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><p>Linux的mkdir命令用于创建目录。</p>
+<p>小栗子：</p>
+<ol>
+<li><p>想要在在工作目录下，创建一个名为test1的子目录</p>
+<p><code>mkdir test1</code></p>
 </li>
-<li>cv2.imshow(窗口名，图片)：用来显示图片</li>
-<li>cv2.imwrite(文件名，图片)：用来保存图片</li>
-<li>cv2.waitKey(delay)等待键盘输入，delay默认为0</li>
-<li>cv2.destroyAllWindows()删除窗口</li>
+<li><p>想要在test2目录中，创建一个名为test的文件，若test2原先不存在，则必须加上参数“-p”，否则会报如下错误：”mkdir: cannot create directory ‘test2/test’: No such file or directory”。</p>
+<p><code>mkdir -p test2/test</code></p>
+</li>
 </ol>
-<p>图片：<img src="/2019/08/01/Opencv-Python图像处理入门/Opencv-Python%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8%5Ccat.jpg" alt></p>
-<p>代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="comment">#读取彩色</span></span><br><span class="line">img_color = cv2.imread(<span class="string">'cat.jpg'</span>, cv2.IMREAD_COLOR)</span><br><span class="line"><span class="comment">#读取灰度</span></span><br><span class="line">img_gray = cv2.imread(<span class="string">'cat.jpg'</span>, cv2.IMREAD_GRAYSCALE)</span><br><span class="line"><span class="comment">#显示彩色图</span></span><br><span class="line">cv2.imshow(<span class="string">'img_color'</span>, img_color)</span><br><span class="line"><span class="comment">#显示灰度图</span></span><br><span class="line">cv2.imshow(<span class="string">'img_gray'</span>, img_gray)</span><br><span class="line"><span class="comment">#保存图像</span></span><br><span class="line">cv2.imwrite(<span class="string">'cat_gray.png'</span>, img_gray)</span><br><span class="line"><span class="comment">#等待键盘输入</span></span><br><span class="line">cv2.waitKey()</span><br><span class="line"><span class="comment">#删除窗口</span></span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
-
-<p><strong>练习：</strong>加载一个彩色图片，显示它，当用户按下‘esc’退出，按下‘s’保存它的灰度图片</p>
-<p>代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img_color = cv2.imread(<span class="string">'cat.jpg'</span>, cv2.IMREAD_COLOR)</span><br><span class="line">cv2.imshow(<span class="string">'img_color'</span>, img_color)</span><br><span class="line"><span class="comment">#接收用户按键</span></span><br><span class="line">key = cv2.waitKey() &amp; <span class="number">0xFF</span></span><br><span class="line"><span class="comment">#esc的ASCII码是27</span></span><br><span class="line"><span class="keyword">if</span> key == <span class="number">27</span>:</span><br><span class="line">    print(<span class="string">'退出'</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"><span class="comment">#ord()将字符转变成对应的ASCII数值</span></span><br><span class="line"><span class="keyword">elif</span> key == ord(<span class="string">'s'</span>):</span><br><span class="line">    print(<span class="string">'已保存'</span>)</span><br><span class="line">    img_gray = cv2.imread(<span class="string">'cat.jpg'</span>, cv2.IMREAD_GRAYSCALE)</span><br><span class="line">    cv2.imwrite(<span class="string">'cat_gray.png'</span>, img_gray)</span><br></pre></td></tr></table></figure>
-
+<hr>
+<h3 id="rmdir"><a href="#rmdir" class="headerlink" title="rmdir"></a>rmdir</h3><p>Linux的mkdir命令用于删除空目录。</p>
+<p>要注意的是，删除的目录必须为空。</p>
+<p>小栗子：</p>
+<ol>
+<li><p>在text1/text/目录下新建一个111.txt文件，也就是让目录不为空，这时候执行rmdir test1，汇报如下错误：rmdir: failed to remove ‘test1’: Directory not empty。</p>
+</li>
+<li><p>现在把111.txt先rm掉，这时候text就成了空目录，可以依然不能rmdir掉text1，因为它还包含了text目录，但可以空目录text就可以使用rmdir了。</p>
+<p><code>rmdir test1/test</code> </p>
+</li>
+<li><p>如果我想要删掉test的同时，检查其父目录text1是否为空，若为空，则一并删除。添加参数“-p”就可以了。</p>
+<p><code>rmdir -p test1/test</code></p>
+</li>
+</ol>
+<hr>
+<h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><p>Linux的cp命令用于复制文件或目录。</p>
+<p>参数：</p>
+<ul>
+<li><p>-r 若复制的文件是个目录，将该目录下的所有子目录，和文件都复制到指定路径中</p>
+</li>
+<li><p>-R 和命令“-r”类似，但在有些情况不同</p>
+</li>
+<li><p>-p 除复制文件内容外，还把修改时间和访问权限也复制到新文件中</p>
+</li>
+<li><p>-f 复制到的指定目录存在，同名文件时，进行覆盖，不提醒用户。</p>
+<p><strong>这里有个坑，我发现加了“-f”参数，系统还是会让我手动确认，其实跟系统设置有关，cp这个命令被系统设置了别名，相当于“cp -i”，也就是说，在执行cp的时候，其实实在执行cp -if，解决办法就是使用原生的cp，可以执行命令<code>/bin/cp -f</code>,就可以了。</strong></p>
+</li>
+<li><p>-i 与-f相反，在覆盖前会给出提示，要求用户确认</p>
+</li>
+<li><p>-l 不复制文件，只是生成链接文件</p>
+</li>
+<li><p>-a 通常在复制目录的时候使用，相当于命令“-dpR”</p>
+</li>
+</ul>
+<hr>
+<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><p>Linux的mv命令用于为文件或目录重命名，以及将文件或目录移入其他位置。</p>
+<p>参数：</p>
+<ul>
+<li>-i 若指定目录已有同名文件，则提示用户</li>
+<li>-f 覆盖时不进行提示</li>
+</ul>
+<p>小栗子：</p>
+<ol>
+<li><p>将文件或目录test1更名为test2</p>
+<p><code>mv test1 test2</code></p>
+</li>
+<li><p>将test1放入mytest/test2目录中，若原来没有test2这个目录，就将test1移入mytest目录下，并将其更名为test2</p>
+<p><code>mv test1 mytest/test2</code></p>
+</li>
+<li><p>将mytest/test2下的所有文件和目录移到当前目录下</p>
+<p><code>mv mytest/test2/* ./</code></p>
+</li>
+</ol>
+<hr>
+<h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><p>参数：</p>
+<ul>
+<li>-i 删除前提醒用户</li>
+<li>-f 不提醒直接删</li>
+<li>-r 将目录及以下的所有文件删除</li>
+</ul>
+<p>小栗子：</p>
+<ol>
+<li><p>删除文件hello.txt</p>
+<p><code>rm hello.txt</code></p>
+</li>
+<li><p>删除目录，单独使用命令“rm”会报错：rm: cannot remove ‘test1’: Is a directory</p>
+</li>
+<li><p>删除指定目录及其以下所有文件</p>
+<p><code>rm -r test1</code></p>
+</li>
+<li><p>删除当前目录下的所有文件</p>
+<p><code>rm -rf ./*</code>或者<code>rm -rf *</code></p>
+</li>
+</ol>
+<p><strong>文件一旦通过命令“rm”删除，无法恢复，所以要格外小心！</strong></p>
+<p><strong>我看到知乎上有个好办法，不直接使用rm命令，而是使用mv命令将想要删除的文件以到/delete目录下，相当于Windows的回收站一样</strong></p>
 
       
     </div>
@@ -402,8 +485,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/01/重新搭建一次网站/" rel="next" title="重新搭建一次网站:(">
-                <i class="fa fa-chevron-left"></i> 重新搭建一次网站:(
+              <a href="/2019/08/12/adb命令控制安卓手机/" rel="next" title="adb命令控制安卓手机">
+                <i class="fa fa-chevron-left"></i> adb命令控制安卓手机
               </a>
             
           </div>
@@ -411,10 +494,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/02/hexo加入自己的页面-不经过hexo渲染/" rel="prev" title="hexo加入自己的页面(不经过hexo渲染)">
-                hexo加入自己的页面(不经过hexo渲染) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -535,7 +614,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#读取图片、显示图片"><span class="nav-number">1.</span> <span class="nav-text">读取图片、显示图片</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ls"><span class="nav-number">1.</span> <span class="nav-text">ls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cd"><span class="nav-number">2.</span> <span class="nav-text">cd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pwd"><span class="nav-number">3.</span> <span class="nav-text">pwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mkdir"><span class="nav-number">4.</span> <span class="nav-text">mkdir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rmdir"><span class="nav-number">5.</span> <span class="nav-text">rmdir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cp"><span class="nav-number">6.</span> <span class="nav-text">cp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv"><span class="nav-number">7.</span> <span class="nav-text">mv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm"><span class="nav-number">8.</span> <span class="nav-text">rm</span></a></li></ol></div>
             
 
           </div>
