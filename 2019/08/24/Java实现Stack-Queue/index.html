@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Opencv+Python打开摄像头并进行一些简单的操作">
+<meta name="description" content="栈和队列，类似链表，都是线性数据结构，此处使用链表实现栈和队列。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Opencv摄像头操作">
-<meta property="og:url" content="http://yoursite.com/2019/08/02/Opencv摄像头操作/index.html">
+<meta property="og:title" content="Java实现Stack&amp;Queue">
+<meta property="og:url" content="http://yoursite.com/2019/08/24/Java实现Stack-Queue/index.html">
 <meta property="og:site_name" content="Jing hui的小站">
-<meta property="og:description" content="Opencv+Python打开摄像头并进行一些简单的操作">
+<meta property="og:description" content="栈和队列，类似链表，都是线性数据结构，此处使用链表实现栈和队列。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-02T05:06:16.163Z">
+<meta property="og:updated_time" content="2019-08-24T02:07:07.874Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Opencv摄像头操作">
-<meta name="twitter:description" content="Opencv+Python打开摄像头并进行一些简单的操作">
+<meta name="twitter:title" content="Java实现Stack&amp;Queue">
+<meta name="twitter:description" content="栈和队列，类似链表，都是线性数据结构，此处使用链表实现栈和队列。">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/02/Opencv摄像头操作/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/24/Java实现Stack-Queue/">
 
 
 
 
 
-  <title>Opencv摄像头操作 | Jing hui的小站</title>
+  <title>Java实现Stack&Queue | Jing hui的小站</title>
   
 
 
@@ -282,7 +282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/Opencv摄像头操作/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/24/Java实现Stack-Queue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ding Jinghui">
@@ -299,7 +299,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Opencv摄像头操作</h1>
+          <h1 class="post-title" itemprop="name headline">Java实现Stack&Queue</h1>
         
 
         <div class="post-meta">
@@ -311,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-02T12:31:01+08:00">
-                2019-08-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-24T08:37:38+08:00">
+                2019-08-24
               </time>
             
 
@@ -349,18 +349,16 @@
       
 
       
-        <p>Opencv+Python打开摄像头并进行一些简单的操作</p>
+        <p>栈和队列，类似链表，都是线性数据结构，此处使用链表实现栈和队列。</p>
 <a id="more"></a>
 
-<h3 id="打开摄像头"><a href="#打开摄像头" class="headerlink" title="打开摄像头"></a>打开摄像头</h3><p>函数：cv2.VideoCapture(value)，其中value = 0为默认计算机摄像头，1可以更换来源</p>
-<p>代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap = cv2.VideoCapture(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="comment"># 读取每一帧</span></span><br><span class="line">    ret, frame = cap.read()</span><br><span class="line">    <span class="comment"># 读取灰度</span></span><br><span class="line">    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)</span><br><span class="line">    <span class="comment"># 彩色</span></span><br><span class="line">    cv2.imshow(<span class="string">'frame'</span>, frame)</span><br><span class="line">    <span class="comment"># 灰度</span></span><br><span class="line">    cv2.imshow(<span class="string">'gray'</span>, gray)</span><br><span class="line">    <span class="comment"># 按q退出</span></span><br><span class="line">    <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>) &amp; <span class="number">0xFF</span> == ord(<span class="string">'q'</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">cap.release()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h2 id="栈（Stack）"><a href="#栈（Stack）" class="headerlink" title="栈（Stack）"></a>栈（Stack）</h2><p>栈与线性表的最大区别是数据的存取的操作，我们可以这样认为栈(Stack)是一种特殊的线性表，其插入和删除操作只允许在线性表的一端进行，一般而言，把允许操作的一端称为栈顶(Top)，不可操作的一端称为栈底(Bottom)，同时把插入元素的操作称为入栈(Push),删除元素的操作称为出栈(Pop)。若栈中没有任何元素，则称为空栈。</p>
+<p>就像是一个装东西的箱子，最先放进去的，压在最下面，最后放上去的，在最上面，也就是先进后出（First In Last Out FILO）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Stack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> Node top;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> data;</span><br><span class="line">        Node pre;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.data = val;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(top == <span class="keyword">null</span>) &#123;</span><br><span class="line">            top = <span class="keyword">new</span> Node(val);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            Node newNode = <span class="keyword">new</span> Node(val);</span><br><span class="line">            newNode.pre = top;</span><br><span class="line">            top = newNode;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Node popNode = top;</span><br><span class="line">        top = top.pre;</span><br><span class="line">        <span class="keyword">return</span> popNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Stack stack = <span class="keyword">new</span> Stack();</span><br><span class="line">        stack.push(<span class="number">1</span>);</span><br><span class="line">        stack.push(<span class="number">2</span>);</span><br><span class="line">        stack.push(<span class="number">3</span>);</span><br><span class="line">        stack.push(<span class="number">4</span>);</span><br><span class="line">        System.out.println(stack.pop().data);</span><br><span class="line">        System.out.println(stack.pop().data);</span><br><span class="line">        System.out.println(stack.pop().data);</span><br><span class="line">        System.out.println(stack.pop().data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这里可以看出waitKey（delay）中delay的值有什么作用了，如果为0，则只显示一张图片，因为它在一直等待用户操作，当delay&gt;0时，每隔‘delay’毫秒，获取一次用户操作，就可以让摄像头一直开着。</p>
 <hr>
-<h3 id="从文件中播放视频"><a href="#从文件中播放视频" class="headerlink" title="从文件中播放视频"></a>从文件中播放视频</h3><p>把设备索引号改成文件名就可以了</p>
-<p>代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">cap=cv2.VideoCapture(<span class="string">'filename.avi'</span>)<span class="comment"># 文件名及格式</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">	<span class="comment"># capture frame-by-frame</span></span><br><span class="line">    ret , frame = cap.read()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># our operation on the frame come here</span></span><br><span class="line">    gray = cv2.cvtColor(frame , cv2.COLOR_BGR2GRAY)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># display the resulting frame</span></span><br><span class="line">    cv2.imshow(<span class="string">'frame'</span>,gray)</span><br><span class="line">    <span class="keyword">if</span> cv2.waitKey(<span class="number">1</span>) &amp;<span class="number">0xFF</span> ==ord(<span class="string">'q'</span>):  <span class="comment"># 按q键退出</span></span><br><span class="line">    	<span class="keyword">break</span></span><br><span class="line"><span class="comment"># when everything done , release the capture</span></span><br><span class="line">cap.release()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h2 id="队列（Queue）"><a href="#队列（Queue）" class="headerlink" title="队列（Queue）"></a>队列（Queue）</h2><p>队列同样是一种特殊的线性表，其插入和删除的操作分别在表的两端进行，队列的特点就是先进先出(First In First Out，FIFO)。我们把向队列中插入元素的过程称为入队(Enqueue)，删除元素的过程称为出队(Dequeue)，并把允许入队的一端称为队尾，允许出的的一端称为队头，没有任何元素的队列则称为空队。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Queue</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> Node head;</span><br><span class="line">    <span class="keyword">public</span> Node tail;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> data;</span><br><span class="line">        Node next;</span><br><span class="line">        Node pre;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.data = val;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">enQueue</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span>) &#123;</span><br><span class="line">            head = <span class="keyword">new</span> Node(val);</span><br><span class="line">            tail = head;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            Node newNode = <span class="keyword">new</span> Node(val);</span><br><span class="line">            tail.next = newNode;</span><br><span class="line">            tail = newNode;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">deQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Node node = head;</span><br><span class="line">        head = head.next;</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Queue queue = <span class="keyword">new</span> Queue();</span><br><span class="line">        queue.enQueue(<span class="number">1</span>);</span><br><span class="line">        queue.enQueue(<span class="number">2</span>);</span><br><span class="line">        queue.enQueue(<span class="number">3</span>);</span><br><span class="line">        queue.enQueue(<span class="number">4</span>);</span><br><span class="line">        System.out.println(queue.deQueue().data);</span><br><span class="line">        System.out.println(queue.deQueue().data);</span><br><span class="line">        System.out.println(queue.deQueue().data);</span><br><span class="line">        System.out.println(queue.deQueue().data);      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -386,8 +384,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/02/hexo加入自己的页面-不经过hexo渲染/" rel="next" title="hexo加入自己的页面(不经过hexo渲染)">
-                <i class="fa fa-chevron-left"></i> hexo加入自己的页面(不经过hexo渲染)
+              <a href="/2019/08/23/java实现单链表/" rel="next" title="java实现单链表">
+                <i class="fa fa-chevron-left"></i> java实现单链表
               </a>
             
           </div>
@@ -395,10 +393,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/04/正则表达式（一）/" rel="prev" title="正则表达式（一）">
-                正则表达式（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -519,7 +513,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开摄像头"><span class="nav-number">1.</span> <span class="nav-text">打开摄像头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从文件中播放视频"><span class="nav-number">2.</span> <span class="nav-text">从文件中播放视频</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#栈（Stack）"><span class="nav-number">1.</span> <span class="nav-text">栈（Stack）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#队列（Queue）"><span class="nav-number">2.</span> <span class="nav-text">队列（Queue）</span></a></li></ol></div>
             
 
           </div>
